@@ -1,0 +1,235 @@
+/* Start Golobel Sules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root {
+    --min-color: #2196F3;
+    --min-color-alt: #1787e0;
+    --min-color-white : #FFFFFF;
+    --min-color-3-ddd: #ddd;
+    --min-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ECECEC;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Mudium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.main-title {
+    margin: 0 auto 80px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--min-transition);
+}
+.main-title::before,
+.main-title::after  {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--min-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::before {
+    left: -30px;
+}
+.main-title::after {
+    right: -30px;
+}
+.main-title:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+.main-title:hover {
+    color: var(--min-color-white);
+    border: 2px solid var(--min-color-white);
+    transition-delay: 0.5s;
+}
+.spikes {
+    position: relative;
+}
+.spikes::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+                    linear-gradient(225deg, white 25%, transparent 25%) ;
+    background-size: 40px 40px;
+}
+.dots {
+    background-image: url(../imges/dots.png);
+    height: 186px;
+    width: 204px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.dots-up {
+    top: 200px;
+    right: 0;
+}
+.dots-down {
+    bottom: 200px;
+    left: 0;
+}
+@media (max-width: 991px) {
+    .dots {
+        display: none;
+    }
+}
+/* End Golobel Sules */
+/* Start Projekte */
+.projects .main-info {
+    margin: 100px auto;
+    font-size: 23px;
+    width: fit-content;
+    position: relative;
+}
+.projects .main-info h1 {
+    border: 10px solid black;
+    padding: 35px;
+    border-radius: 45px;
+    transition: 0.3s;
+    /* cursor: pointer; */
+} 
+@media (max-width: 767px) {
+    .projects .main-info h1 {
+        font-size: 1em;
+    }
+}
+/* .projects .main-info h1:hover {
+    color: var(--min-color);
+    border-color: var(--min-color);
+    box-shadow: 0 0 50px var(--min-color),
+                inset 0 0 15px var(--min-color);
+
+} */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.container .main-info {
+    display: flex;
+}
+.container .box {
+    box-shadow: 0 2px 15px rgba(0 0 0 / 10%);
+    background-color: var(--min-color-white);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform var(--min-transition), box-shadow var(--min-transition);
+    position: relative;
+    overflow: visible;
+
+}
+.container .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 15px rgba(0 0 0 / 20%);
+}
+.container .box img {
+    /* width: 100%; */
+    max-width: 100%;
+}
+.container .box .content {
+    padding: 20px;
+}
+.container .box .content h3 {
+    margin: 0;
+}
+.container .box .content p {
+    margin: 10px 0 0 ;
+    line-height: 1.5;
+    color: #777;
+}
+.container .box .info {
+    padding: 20px;
+    border-top: 1px solid #e6e6e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .box .info a {
+    color: var(--min-color);
+    font-weight: bold;
+}
+.container .projekte .box .info i {
+    color: var(--min-color);
+}
+.container .box:hover .info i {
+    animation: moving-arrow 0.6s linear infinite;
+}
+.last-one {
+    display: flex;
+    margin-bottom: 50px;
+    border: 1px solid var(--min-color);
+    width: fit-content;
+    padding: 13px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    transition: var(--min-transition);
+}
+.last-one:hover {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: var(--min-color);
+}
+.last-one a {
+    font-size: 24px;
+    color: var(--min-color);
+}
+.last-one a:hover{
+    color: var(--min-color-white);
+}
+/* End Projekte */
